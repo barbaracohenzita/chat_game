@@ -1,0 +1,108 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  /* Subtle animated gradient background */
+  background: linear-gradient(-45deg, #e0eafc, #cfdef3, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.score-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+#restart-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background: #bbada0;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Empty cells */
+.cell {
+  width: 100%;
+  padding-top: 100%;
+  background: #cdc1b4;
+  border-radius: 4px;
+  position: relative;
+}
+
+.tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Colors for normal Fibonacci tiles */
+.tile.normal-1 { background: #eee4da; color: #776e65; }
+.tile.normal-2 { background: #ede0c8; color: #776e65; }
+.tile.normal-3 { background: #f2b179; color: #f9f6f2; }
+.tile.normal-5 { background: #f59563; color: #f9f6f2; }
+.tile.normal-8 { background: #f67c5f; color: #f9f6f2; }
+.tile.normal-13 { background: #f65e3b; color: #f9f6f2; }
+.tile.normal-21 { background: #edcf72; color: #f9f6f2; }
+.tile.normal-34 { background: #edcc61; color: #f9f6f2; }
+.tile.normal-55 { background: #edc850; color: #f9f6f2; }
+.tile.normal-89 { background: #edc53f; color: #f9f6f2; }
+.tile.normal-144 { background: #edc22e; color: #f9f6f2; }
+
+/* Styling for forged tiles (resulting from Forge merges or spawn Forge) */
+.tile.forged { background: #a1cfff; color: #fff; }
+
+/* Message overlay for win/lose */
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(238, 228, 218, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 32px;
+  display: none;
+  z-index: 10;
+}
