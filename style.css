@@ -53,7 +53,7 @@ header {
   position: relative;
 }
 
-/* Empty cells */
+/* Background grid cells */
 .cell {
   width: 100%;
   padding-top: 100%;
@@ -62,6 +62,7 @@ header {
   position: relative;
 }
 
+/* Tile styling */
 .tile {
   position: absolute;
   top: 0;
@@ -90,7 +91,7 @@ header {
 .tile.normal-89 { background: #edc53f; color: #f9f6f2; }
 .tile.normal-144 { background: #edc22e; color: #f9f6f2; }
 
-/* Styling for forged tiles (resulting from Forge merges or spawn Forge) */
+/* Styling for forged tiles */
 .tile.forged { background: #a1cfff; color: #fff; }
 
 /* Message overlay for win/lose */
@@ -99,7 +100,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(238, 228, 218, 0.8);
+  background: rgba(238, 228, 218, 0.9);
   padding: 20px;
   border-radius: 8px;
   font-size: 32px;
